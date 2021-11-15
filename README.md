@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Unit Project 3
+## Wishlist App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Summary 
 
-## Available Scripts
+Utilizing JavaScript, MongoDB, Express, React, and Node, we are creating a wishlist app. This app will provide users a place to add items to a "wish list". This app will grant users a place to, perhaps, keep track of or store the information of the items they desire. Users can insert the item's name, image, price, and URL to a form and the app will automatically place them on the screen for users to click on and view details about. 
 
-In the project directory, you can run:
+## Models
 
-### `npm start`
+The Model will consist of a schema that will have 4 properties. Those properties are a Name, Image, Price, and URL.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- name: String
+- image : String
+- price: String
+- url: String
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Route Table 
 
-### `npm test`
+The routes follow full CRUD and RESTful methods 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| url                 | method | action                                 |        |
+|---------------------|--------|----------------------------------------|--------|
+| /wishlist           | get    | The main/ index page                   | index  |
+| /wishlist/:id       | get    | get a particular wishlist item         | show   |
+| /wishlist          | post   | post the new item                      | create |
+| /wishlist/:id/      | put    | update the wishlist item from the list      | update |
+| /wishlist/:id       | delete | delete a wishlist                 | delete |
 
-### `npm run build`
+## User Stories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- User will be able to sign up or log in to a personal account 
+- User will see all of their items they have added to their wishlist on the home index page
+- Users can create new items by filling out a form 
+- Users will see their new item show up on the home page and be clickable to view more details
+- Users can update/edit their item on the show page
+- Users can delete items 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Challenges
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## List of Technologies
+- node.js
+- REACT
+- EXPRESS
+- SASS
+- MongoDB
