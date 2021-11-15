@@ -6,9 +6,10 @@
 Utilizing JavaScript, MongoDB, Express, React, and Node, we are creating a wishlist app. This app will provide users a place to add items to a "wish list". This app will grant users a place to, perhaps, keep track of or store the information of the items they desire. Users can insert the item's name, image, price, and URL to a form and the app will automatically place them on the screen for users to click on and view details about. 
 
 ## Roles 
-- Backend Routing - Kenny Nguyen
-
-
+- Backend (Controllers, DataBase, Models, Server) - Kenny Nguyen
+- Frontend (Main.js) - Tony Daniels
+- Frontend (Show.js) - Ahmed Sorour
+- Frontend (Index.js, Styling) - Kenny Nguyen
 
 ## Models
 
