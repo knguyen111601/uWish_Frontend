@@ -19,8 +19,10 @@ const Show2 = (props) =>{
             }
         })
         const json = await response.json()
-        setWishlist([json])
-        setEditForm([json])
+        .then((data)=>{
+            setWishlist([data])
+            setEditForm(data)
+        })
     }
 
 useEffect(()=>{

@@ -90,10 +90,14 @@ const URL = "https://project-3-backend-wishlist.herokuapp.com/wishlist/"
     }
 
     const notLoggedIn = () =>{
-        return <Routes><Route path="/" element={<Home />}/></Routes>
+        return <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/signup" element={<Signup/>}/>
+                <Route path="/login" element={<Login/>}/>
+            </Routes>
     }
 
-    return <main>
+    return <main className="main">
             {gState.token ? loggedIn() : notLoggedIn()}
         </main>
 }

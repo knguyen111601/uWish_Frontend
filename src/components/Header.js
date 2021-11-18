@@ -13,10 +13,10 @@ const Header = (props) =>{
         </Link>
     )
 
-    return <nav>
+    return <nav className="header">
         <Link to="/"><h1>Home</h1></Link>
-        <Link to="/signup">Signup</Link> 
-        <Link to="/login">Login</Link>
+        <Link to="/signup"><h1>Signup</h1></Link> 
+        <Link to="/login"><h1>Login</h1></Link>
         {gState.token ? logout : null}
     </nav>
 }

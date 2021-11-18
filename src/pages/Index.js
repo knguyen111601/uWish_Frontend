@@ -86,17 +86,16 @@ useEffect(()=>{
 
     const loaded = () => {
         return wishlist.map((singleWishlist)=>{
-            return <div key={singleWishlist._id}>
+            return <div key={singleWishlist._id} className="singleItem">
                 <Link to={`/${singleWishlist._id}/`}>
+                <img src={singleWishlist.image} alt={singleWishlist.name}/>
                 <h1>{singleWishlist.name}</h1>
                 </Link>
-                <img src={singleWishlist.image} alt={singleWishlist.name}/>
+                <div className="singleItemInfo">
                 <h1>${singleWishlist.price}</h1>
                 <a target="_blank" href={singleWishlist.url}><h1>Purchase Link</h1></a>
                 <button onClick={()=>{handleDelete(singleWishlist._id)}}>Delete</button>
-                <Link to={`/${singleWishlist._id}/`}>
-                <button>Edit</button>
-                </Link>
+                </div>
             </div>
         })
     }
@@ -114,7 +113,9 @@ useEffect(()=>{
             <input type="text" value={createForm.url} name="url" placeholder="Item URL" onChange={handleChange}/>
             <input type="submit" value="Add Item"/>
         </form>
+        <div className="section">
         {wishlist ? loaded() : null}
+        </div>
     </div>
 }
 
