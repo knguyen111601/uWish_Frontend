@@ -1,13 +1,30 @@
 import './App.css';
+import React from 'react';
+import { createContext, useState, useEffect} from 'react';
 import Main from "./components/Main"
 import Header from "./components/Header"
 
+export const GlobalCtx = createContext(null)
+
 function App() {
+  const [gState, setGState] = useState({url:"https://project-3-backend-wishlist.herokuapp.com", token: null})
+
+  // seeing if already logged in
+  useEffect(()=>{
+    const token = JSON.parse(window.localStorage.getItem("token"))
+    console.log(token)
+    if (token) {
+      setGState({...gState, token: token.token})
+    }
+  }, [])
+
   return (
+    <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
       <Header />
       <Main />
     </div>
+    </GlobalCtx.Provider>
   );
 }
 
