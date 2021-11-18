@@ -131,4 +131,14 @@ body {
     display: none;
   }
 
+// Profile Section
+.profileSection img {
+    width: 90%;
+    border-radius: 300px;
+}
 
+.profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
