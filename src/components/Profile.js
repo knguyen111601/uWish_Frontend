@@ -20,8 +20,18 @@ const Profile = (props) => {
     }
 
     return <div className="profile">
-        <h1>Profile</h1>
+        <div>
         {username ? loaded() : notLoaded()}
+        <h1>Home</h1>
+        <div className="horizontal"></div>
+        <h1>Home</h1>
+        <div className="horizontal"></div>
+        <h1>Home</h1>
+        <div className="horizontal"></div>
+        </div>
+        <div className="settings">
+            <p>Gear is gonna go here</p>
+        </div>
     </div>
 }
 

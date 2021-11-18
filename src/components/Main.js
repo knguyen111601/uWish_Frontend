@@ -6,6 +6,7 @@ import Signup from "../pages/Signup"
 import Login from "../pages/Login"
 import Home from "../pages/Home"
 import { GlobalCtx } from "../App"
+import Profile from "./Profile"
 const Main = (props) => {
 const {gState, setGState} = useContext(GlobalCtx)
 const {token} = gState
