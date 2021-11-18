@@ -40,7 +40,7 @@ const Profile = (props) => {
 
     return <div className="profile">
         <div>
-        {pfp ? loaded() : notLoaded()}
+        {user ? loaded() : notLoaded()}
         <div className="horizontal"></div>
         <Link to="/">
             <h1>Home</h1>
