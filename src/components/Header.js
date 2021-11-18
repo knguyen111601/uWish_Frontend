@@ -9,7 +9,7 @@ const Header = (props) =>{
             <h1 onClick={()=>{
                 window.localStorage.removeItem("token")
                 window.localStorage.removeItem("username")
-                setGState({...gState, token: null})
+                setGState({...gState, token: null, username: null, pfp: null, bio: null, id: null})
             }}>Logout</h1>
         </Link>
     )
