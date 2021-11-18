@@ -86,7 +86,7 @@ const Show = (props) => {
       );
 
     return (
-      <div className="wishlist">
+      <div>
         <div className="showCard">
         <img src={singleWishlist.image} alt={singleWishlist.name}/>
         <h1>{singleWishlist.name}</h1>

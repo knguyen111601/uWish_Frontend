@@ -1,0 +1,60 @@
+// Variables
+$gradient: linear-gradient(90deg, rgba(219,125,89,1) 0%, rgba(214,53,53,1) 50%, rgba(222,94,138,1) 100%);
+
+// Functions
+
+// MIXINS
+
+// Styling
+
+body {
+    background: $gradient;
+}
+
+.App {
+    border: 2px solid purple;
+    display: grid;
+    // grid-template-areas: 
+    // "p p h h h h h h h h h h"
+    // "p p h h h h h h h h h h"
+    // "p p h h h h h h h h h h"
+    // "p p m m m m m m m m m m"
+    // "p p m m m m m m m m m m"
+    // "p p m m m m m m m m m m"
+    // "p p m m m m m m m m m m";
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 200px 500px 200px;
+    width: 70%;
+    height: 1000px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: white;
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(10px);
+}
+
+.main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 6
+}
+
+.header {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.profile {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+.nav h1 {
+    display: inline-block;
+}
+

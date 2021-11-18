@@ -1,9 +1,8 @@
-import './App.css';
 import React from 'react';
 import { createContext, useState, useEffect} from 'react';
 import Main from "./components/Main"
 import Header from "./components/Header"
-
+import Profile from "./components/Profile"
 export const GlobalCtx = createContext(null)
 
 function App() {
@@ -22,6 +21,7 @@ function App() {
     <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
       <Header />
+      <Profile />
       <Main />
     </div>
     </GlobalCtx.Provider>

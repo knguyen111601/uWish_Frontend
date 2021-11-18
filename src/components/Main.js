@@ -93,7 +93,7 @@ const URL = "https://project-3-backend-wishlist.herokuapp.com/wishlist/"
         return <Routes><Route path="/" element={<Home />}/></Routes>
     }
 
-    return <main>
+    return <main className="main">
             {gState.token ? loggedIn() : notLoggedIn()}
         </main>
 }
