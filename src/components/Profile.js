@@ -5,33 +5,54 @@ import { GlobalCtx } from "../App"
 const Profile = (props) => {
 
     const {gState, setGState} = useContext(GlobalCtx)
-    const {username, pfp, bio, id} = gState
+    const {url, id, pfp, bio} = gState
+
+    const [user, setUser] = useState(null)
+
+    const getUser = async ()=>{
+        const response = await fetch(url + `/auth/${id}`, {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const json = await response.json()
+        .then((data)=>{
+            setUser(data)
+        })
+    }
+
+    useEffect(()=>{getUser()})
 
     const loaded = () =>{
        return <div className="profileSection">
-           <img src={pfp} alt="profile picture"/>
-           <h1>{username}</h1>
-           <p>{bio}</p>
+           {user.pfp ? <img src={user.pfp} alt="Profile Picture"/> : <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture"/>}
+           <h1>{user.username}</h1>
+           <p>{user.bio}</p>
        </div>
     }
 
     const notLoaded = () =>{
-        return <h1>No one yet</h1>
+        return <div className="profileSection">
+        </div>
     }
+
 
     return <div className="profile">
         <div>
-        {username ? loaded() : notLoaded()}
-        <h1>Home</h1>
+        {pfp ? loaded() : notLoaded()}
         <div className="horizontal"></div>
-        <h1>Home</h1>
-        <div className="horizontal"></div>
-        <h1>Home</h1>
+        <Link to="/">
+            <h1>Home</h1>
+        </Link>
         <div className="horizontal"></div>
         </div>
         <div className="settings">
             <p>Gear is gonna go here</p>
         </div>
+        <Link to="/user">
+            edit
+        </Link>
     </div>
 }
 
