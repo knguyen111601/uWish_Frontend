@@ -1,5 +1,5 @@
 import { GlobalCtx } from "../App"
-import {useState, useContext} from "react"
+import {useState, useContext, useEffect} from "react"
 import {useNavigate} from "react-router-dom"
 import Profile from "../components/Profile"
 const Login = (props) =>{
