@@ -35,11 +35,9 @@ const Profile = (props) => {
            {user ? <img src={user.pfp} alt="Profile Picture"/> : <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture"/>}
            <h1>{user.username}</h1>
            <p>{user.bio}</p>
-           <div className="horizontal"></div>
             <Link to="/">
                 <h1>Home</h1>
             </Link>
-            <div className="horizontal"></div>
             <Link to="/user">
                 <h1>Profile</h1>
             </Link>
@@ -61,7 +59,7 @@ const Profile = (props) => {
                 window.location.reload()
                 }}>Logout</h1>
             <Link to="/user/edit">
-                <h3><BsGearFill /></h3>
+                <h1><BsGearFill /></h1>
             </Link>
         </Link>
     )
