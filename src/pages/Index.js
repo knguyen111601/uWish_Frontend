@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { GlobalCtx } from "../App"
-
+import {BsFillTrashFill} from "react-icons/bs"
 const Index = (props) => {
 
     const {gState, setGState} = useContext(GlobalCtx)
@@ -89,12 +89,14 @@ useEffect(()=>{
             return <div key={singleWishlist._id} className="singleItem">
                 <Link to={`/${singleWishlist._id}/`}>
                 <img src={singleWishlist.image} alt={singleWishlist.name}/>
-                <h1>{singleWishlist.name}</h1>
                 </Link>
                 <div className="singleItemInfo">
+                <Link to={`/${singleWishlist._id}/`}>
+                <h1>{singleWishlist.name}</h1>
+                </Link>
                 <h1>${singleWishlist.price}</h1>
-                <a target="_blank" href={singleWishlist.url}><h1>Purchase Link</h1></a>
-                <button onClick={()=>{handleDelete(singleWishlist._id)}}>Delete</button>
+                <a target="_blank" href={singleWishlist.url}><button>Purchase</button></a>
+                <button className="trash" onClick={()=>{handleDelete(singleWishlist._id)}}><BsFillTrashFill/></button>
                 </div>
             </div>
         })

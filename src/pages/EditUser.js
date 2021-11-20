@@ -57,7 +57,7 @@ useEffect(()=>{getUser()}, [])
     
     return <div>
         <h1>Edit Form</h1>
-        <img src={gState.pfp} alt="Profile Picture"/>
+        <img src={editForm.pfp} alt="Profile Picture"/>
         {form()}
         </div>
 }
