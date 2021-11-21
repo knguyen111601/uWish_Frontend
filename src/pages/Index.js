@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { GlobalCtx } from "../App"
+import Modal from "./Modal"
 
 const Index = (props) => {
 
@@ -105,14 +106,38 @@ useEffect(()=>{
     //     // CHANGE THIS TO SOMETHING BETTER ^^^
     // }
     
+
+
+
+//=========================================
+const [isOpen, setIsOpen] = useState(false)
+
+//=========================================
+
+
+
     return <div>
-        <form onSubmit={handleClick}>
+        <div>
+        <button onClick={()=> setIsOpen(true)}>Make a Wish</button>
+<Modal open ={isOpen} onClose={()=> setIsOpen(false)}>
+    <form onSubmit={handleClick}>
+            <input type="text" value={createForm.name} name="name" placeholder="Name" onChange={handleChange}/><br></br>
+            <input type="text" value={createForm.image} name="image" placeholder="Image URL" onChange={handleChange}/><br></br>
+            <input type="text" value={createForm.price} name="price" placeholder="Price" onChange={handleChange}/><br></br>
+            <input type="text" value={createForm.url} name="url" placeholder="Item URL" onChange={handleChange}/><br></br>
+            <input type="submit" value="Add Item"/>
+        </form>
+</Modal>
+        </div>
+
+
+        {/* <form onSubmit={handleClick}>
             <input type="text" value={createForm.name} name="name" placeholder="Name" onChange={handleChange}/>
             <input type="text" value={createForm.image} name="image" placeholder="Image URL" onChange={handleChange}/>
             <input type="text" value={createForm.price} name="price" placeholder="Price" onChange={handleChange}/>
             <input type="text" value={createForm.url} name="url" placeholder="Item URL" onChange={handleChange}/>
             <input type="submit" value="Add Item"/>
-        </form>
+        </form> */}
         <div className="section">
         {wishlist ? loaded() : null}
         </div>

@@ -11,6 +11,8 @@ const Show2 = (props) =>{
 
     const [wishlist, setWishlist] = useState(null)
     const [editForm, setEditForm] = useState({})
+
+    
     const getWishlist = async () =>{
         const response = await fetch(url + "/wishlist/" + id,{
             method:"get",

@@ -6,6 +6,8 @@ import Signup from "../pages/Signup"
 import Login from "../pages/Login"
 import Home from "../pages/Home"
 import { GlobalCtx } from "../App"
+import Modal from "../pages/Modal"
+
 const Main = (props) => {
 const {gState, setGState} = useContext(GlobalCtx)
 const {token} = gState
@@ -86,6 +88,7 @@ const URL = "https://project-3-backend-wishlist.herokuapp.com/wishlist/"
                     <Route path="/:id" element={<Show2 />}/>
                     <Route path="/signup" element={<Signup/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/modal" element={<Modal/>}/>
             </Routes>
     }
 

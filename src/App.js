@@ -3,7 +3,12 @@ import { createContext, useState, useEffect} from 'react';
 import Main from "./components/Main"
 import Header from "./components/Header"
 import Profile from "./components/Profile"
+import Modal from "./pages/Modal"
+
+
 export const GlobalCtx = createContext(null)
+
+
 
 function App() {
   const [gState, setGState] = useState({url:"https://project-3-backend-wishlist.herokuapp.com", token: null})
@@ -17,10 +22,13 @@ function App() {
     }
   }, [])
 
+
   return (
     <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
-      <Header />
+      <Modal/>
+
+       <Header />
       <Profile />
       <Main />
     </div>
