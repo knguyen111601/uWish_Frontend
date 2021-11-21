@@ -60,6 +60,7 @@ const handleSubmit = (event) => {
                 url: ""
             })
             getWishlist()
+            navigate("/")
         })
 }
 

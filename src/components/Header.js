@@ -1,8 +1,10 @@
 import { useContext } from "react"
 import {Link} from "react-router-dom"
 import { GlobalCtx } from "../App"
+import {BsStars} from "react-icons/bs"
 const Header = (props) =>{
     const {gState, setGState} = useContext(GlobalCtx)
+    const {username} = gState
 
     const logout = (
         <Link to="/">
@@ -15,10 +17,8 @@ const Header = (props) =>{
     )
 
     return <nav className="header">
-        <Link to="/"><h1>Home</h1></Link>
-        <Link to="/signup"><h1>Signup</h1></Link> 
-        <Link to="/login"><h1>Login</h1></Link>
-        {gState.token ? logout : null}
+        <h1 className="logo">uWish<BsStars/></h1>
+        {gState.token ? <h1 className="welcome">Welcome, {username}!</h1> : null}
     </nav>
 }
 

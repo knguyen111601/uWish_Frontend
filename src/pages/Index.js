@@ -5,7 +5,7 @@ import {BsFillTrashFill} from "react-icons/bs"
 const Index = (props) => {
 
     const {gState, setGState} = useContext(GlobalCtx)
-    const {url, token} = gState
+    const {url, token, username} = gState
 
     const [wishlist, setWishlist] = useState(null)
 
