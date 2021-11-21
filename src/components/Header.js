@@ -17,7 +17,9 @@ const Header = (props) =>{
     )
 
     return <nav className="header">
+        <Link to="/">
         <h1 className="logo">uWish<BsStars/></h1>
+        </Link>
         {gState.token ? <h1 className="welcome">Welcome, {username}!</h1> : null}
     </nav>
 }

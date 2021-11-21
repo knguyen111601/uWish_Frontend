@@ -47,19 +47,27 @@ useEffect(()=>{getUser()}, [])
     }
     
     const form = () =>{
-        return <form onSubmit={handleSubmit}>
+        return <form className="editUserForm" onSubmit={handleSubmit}>
+            <h3>Image URL</h3>
         <input type="text" name="pfp" value={editForm.pfp} placeholder="Profile Picture" onChange={handleChange}/>
+            <h3>Biography</h3>
         <input type="text" name="bio" value={editForm.bio} placeholder="Biography" onChange={handleChange} maxLength="20"/>
-        <input type="submit" value="Update Profile"/> 
+        <input className="addItem" type="submit" value="Update Profile"/> 
         </form>
     }
-    
-    
-    return <div>
-        <h1>Edit Form</h1>
-        <img src={editForm.pfp} alt="Profile Picture"/>
-        {form()}
+
+    return <div className="section">
+    <div className="viewProfile">
+        <div className="viewProfileImg">
+            <img src={editForm.pfp}/>
+            <p className="updateBio">{editForm.bio}</p>
         </div>
+        <div className="vertical"></div>
+        <div className="viewProfileInfo">
+            {form()}
+        </div>
+    </div>
+</div>
 }
 
 export default EditUser
