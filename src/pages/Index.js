@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { GlobalCtx } from "../App"
 import {BsFillTrashFill} from "react-icons/bs"
+import {CgShoppingCart} from "react-icons/cg"
 import Modal from "./Modal"
 
 const Index = (props) => {
@@ -97,8 +98,10 @@ useEffect(()=>{
                 <h1>{singleWishlist.name}</h1>
                 </Link>
                 <h1>${singleWishlist.price}</h1>
-                <a target="_blank" href={singleWishlist.url}><button>Purchase</button></a>
+                <div className="buttons">
+                <a target="_blank" className="purchase" href={singleWishlist.url}><button className="purchase"><CgShoppingCart/></button></a>
                 <button className="trash" onClick={()=>{handleDelete(singleWishlist._id)}}><BsFillTrashFill/></button>
+                </div>
                 </div>
             </div>
         })
@@ -113,14 +116,14 @@ useEffect(()=>{
 
     return <div>
     <div>
-        <button onClick={()=> setIsOpen(true)}>Make a Wish</button>
-    <Modal open ={isOpen} onClose={()=> setIsOpen(false)}>
-    <form onSubmit={handleClick}>
+    <button className="makeWish" onClick={()=> setIsOpen(true)}><span>Make a Wish!</span></button>
+    <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
+    <form className="createForm" onSubmit={handleClick}>
             <input type="text" value={createForm.name} name="name" placeholder="Name" onChange={handleChange}/><br></br>
             <input type="text" value={createForm.image} name="image" placeholder="Image URL" onChange={handleChange}/><br></br>
             <input type="text" value={createForm.price} name="price" placeholder="Price" onChange={handleChange}/><br></br>
             <input type="text" value={createForm.url} name="url" placeholder="Item URL" onChange={handleChange}/><br></br>
-            <input type="submit" value="Add Item"/>
+            <input className="addItem" type="submit" value="Add Item"/>
         </form>
     </Modal>
         </div>

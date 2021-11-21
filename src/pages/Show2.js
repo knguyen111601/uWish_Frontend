@@ -1,7 +1,8 @@
 import { useState, useContext, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { GlobalCtx } from "../App"
-
+import {CgShoppingCart} from "react-icons/cg"
+import {BsFillTrashFill} from "react-icons/bs"
 const Show2 = (props) =>{
     const {gState, setGState} = useContext(GlobalCtx)
     const {url, token} = gState
@@ -77,7 +78,7 @@ const handleDelete = (event) =>{
 }
 
 const form = (
-<form className="editForm" onSubmit={handleSubmit}>
+<form className="editUserForm" onSubmit={handleSubmit}>
     <input
         type="text"
         value={editForm.name}
@@ -106,29 +107,36 @@ const form = (
         placeholder="URL"
         onChange={handleChange}
     />
-    <input type="submit" value="Update Bookmark" />
+    <input className="addItem" type="submit" value="Update Item" />
 </form>
       );
     
 
 const loaded = () => {
     return wishlist.map((singleWishlist)=>{
-        return <div key={singleWishlist._id}>
-            <Link to={`/${singleWishlist._id}/`}>
+        return <div className="showImg" style={{marginTop:"-30px"}} key={singleWishlist._id}>
             <h1>{singleWishlist.name}</h1>
-            </Link>
             <img src={singleWishlist.image} alt={singleWishlist.name}/>
             <h1>${singleWishlist.price}</h1>
-            <a target="_blank" href={singleWishlist.url}><h1>Purchase Link</h1></a>
-            <button onClick={handleDelete}>DELETE</button>
+            <div className="buttons">
+            <a target="_blank" href={singleWishlist.url}><button className="showPurchase"><CgShoppingCart/></button></a>
+            <button className="showTrash" onClick={()=>{handleDelete(singleWishlist._id)}}><BsFillTrashFill/></button>
+            </div>
         </div>
     })
 }
 
-return <div>
-        {form}
+
+return <div className="section">
+<div className="viewProfile">
+    <div className="viewProfile">
         {wishlist ? loaded() : null}
     </div>
+    <div className="vertical"></div>
+    <div className="viewProfileInfo2">
+        {form}
+    </div>
+</div>
+</div>
 }
-
 export default Show2

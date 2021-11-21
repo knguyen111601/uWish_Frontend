@@ -42,12 +42,15 @@ const Login = (props) =>{
     })
     }
 
-    return <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="username" value={form.username} onChange={handleChange}/>
-            <input type="password" name="password" value={form.password} onChange={handleChange}/>
-            <input type="submit" value="Login" onChange={handleChange}/>
+    return <div className="section">
+        <div className="login">
+            <h1 style={{fontSize:"5em", color: "rgba(0,0,0,0.5)"}}>Login</h1>
+        <form className="editUserForm" onSubmit={handleSubmit}>
+            <input type="text" name="username" value={form.username} placeholder="Username" onChange={handleChange}/>
+            <input type="password" name="password" value={form.password} placeholder="Password" onChange={handleChange}/>
+            <input className="addItem" type="submit" value="Login" onChange={handleChange}/>
         </form>
+        </div>
     </div>
 }
 
