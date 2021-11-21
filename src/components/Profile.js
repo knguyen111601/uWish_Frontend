@@ -33,8 +33,9 @@ const Profile = (props) => {
     const loaded = () =>{
        return <div className="profileSection">
            {user ? <img src={user.pfp} alt="Profile Picture"/> : <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture"/>}
-           <h1>{user.username}</h1>
-           <p>{user.bio}</p>
+           <h1 className="username">{user.username}</h1>
+           {user.bio ? <p>{user.bio}</p> : null}
+           <div className="horizontal"></div>
             <Link to="/">
                 <h1>Home</h1>
             </Link>
@@ -50,6 +51,8 @@ const Profile = (props) => {
     }
 
     const logout = (
+        <div className="bottomProfile">
+        <div className="horizontal"></div>
         <Link to="/">
             <h1 onClick={()=>{
                 window.localStorage.removeItem("token")
@@ -58,10 +61,8 @@ const Profile = (props) => {
                 setUser(null) 
                 window.location.reload()
                 }}>Logout</h1>
-            <Link to="/user/edit">
-                <h1><BsGearFill /></h1>
-            </Link>
         </Link>
+        </div>
     )
 
     return <div className="profile">

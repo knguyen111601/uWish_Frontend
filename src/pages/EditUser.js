@@ -49,7 +49,7 @@ useEffect(()=>{getUser()}, [])
     const form = () =>{
         return <form onSubmit={handleSubmit}>
         <input type="text" name="pfp" value={editForm.pfp} placeholder="Profile Picture" onChange={handleChange}/>
-        <input type="text" name="bio" value={editForm.bio} placeholder="Biography" onChange={handleChange}/>
+        <input type="text" name="bio" value={editForm.bio} placeholder="Biography" onChange={handleChange} maxLength="20"/>
         <input type="submit" value="Update Profile"/> 
         </form>
     }

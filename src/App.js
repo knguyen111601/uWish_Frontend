@@ -3,6 +3,7 @@ import { createContext, useState, useEffect} from 'react';
 import Main from "./components/Main"
 import Header from "./components/Header"
 import Profile from "./components/Profile"
+import Settings from './components/Settings';
 export const GlobalCtx = createContext(null)
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
+      <Settings/>
       <Header />
       <Profile />
       <Main />
