@@ -610,7 +610,7 @@ body {
 
     .profileSection img {
         width: 25%;
-        box-shadow: none;
+        box-shadow: 20px 0 rgba(0, 0, 0, 0.2)
     }
 
     .profileSection p {
@@ -689,5 +689,9 @@ body {
 
     .login {
         width: 100%;
+    }
+
+    .makeWish {
+        margin-top: -10px;
     }
 }
