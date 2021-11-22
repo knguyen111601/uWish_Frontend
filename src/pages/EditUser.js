@@ -59,7 +59,7 @@ useEffect(()=>{getUser()}, [])
     return <div className="section">
     <div className="viewProfile">
         <div className="viewProfileImg">
-            <img src={editForm.pfp}/>
+            {editForm.pfp ? <img src={editForm.pfp}/> : <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>}
             <p className="updateBio">{editForm.bio}</p>
         </div>
         <div className="vertical"></div>
