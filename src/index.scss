@@ -89,6 +89,7 @@ body {
     border-radius: 15px;
     font-size: .5em;
     background:rgba(255,255,255, 0.5);
+    transition: all 0.3s;
 }
 
 .singleItem img {
@@ -572,6 +573,7 @@ body {
         width: 200px;
         height: 250px;
         margin-left: 10px;
+        transition: all 0.3s;
     }
 
     .section {
